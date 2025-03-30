@@ -48,15 +48,18 @@ namespace SistemaNotas
         Sistema.Mensagem mensagem = new Sistema.Mensagem();
         public void Digitar()
         {
+            int qntalunos;
+            Console.WriteLine("Insira a quantidade de alunos\n");
+            qntalunos = Convert.ToInt32(Console.ReadLine());
             double verificacao, notas = 0, media;
             string nota, tipodanota, nomealuno;
-            string[,] MatrizTipoNotas = new string[10,5];
-            Double[,] MatrizNotas = new Double[10, 5];
-            string[] VetorNomes = new string[10];
-            Double[] VetorMedias = new Double[10];
+            string[,] MatrizTipoNotas = new string[qntalunos,5];
+            Double[,] MatrizNotas = new Double[qntalunos, 5];
+            string[] VetorNomes = new string[qntalunos];
+            Double[] VetorMedias = new Double[qntalunos];
 
             Sistema.Segurança segurança = new Sistema.Segurança();
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < qntalunos; i++)
             {
                 notas = 0;
                 mensagem.NomeAluno(); 
@@ -98,7 +101,7 @@ namespace SistemaNotas
                 }
                 
             }
-            for (int g = 0; g < 10; g++)
+            for (int g = 0; g < qntalunos; g++)
                 {
                     Console.WriteLine($"\n\nNotas do aluno(a) {VetorNomes[g]}:");
                     for (int h = 0; h < 5; h++)
